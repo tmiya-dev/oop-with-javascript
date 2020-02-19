@@ -1,0 +1,31 @@
+{
+  "name": "oop-with-javascript",
+  "version": "0.0.1",
+  "description": "a self education course for Object Oriented Programming with JavaScript(ES2015)",
+  "main": "src/js/index.js",
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.4",
+    "@babel/polyfill": "^7.8.3",
+    "@babel/preset-env": "^7.8.4",
+    "babel-loader": "^8.0.6",
+    "browser-sync": "^2.26.7",
+    "core-js": "^3.6.4",
+    "webpack": "^4.41.6",
+    "webpack-cli": "^3.3.11"
+  },
+  "repository": {
+    "type": "git",
+    "directory": "git@github.com:tmiya-dev/oop-with-javascript.git"
+  },
+  "author": "Takeshi Miyakawa <tmiya@tmiya.dev>",
+  "license": "GPL-3.0-or-later",
+  "dependencies": {},
+  "scripts": {
+    "build": "webpack",
+    "server": "browser-sync",
+    "watch:build": "webpack -w",
+    "watch:server": "browser-sync start --config bs-config.js",
+    "watch": "npm-run-all -p watch:*"
+  }
+}
