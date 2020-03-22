@@ -6,8 +6,7 @@ window.onload = () => {
   const report = document.getElementById('report');
   button.onclick = () => {
     console.dir(text);
-    const textValue = text.value;
-    const message = text.value ? 'Hello, ' + textValue : 'Hello, world!';
+    const message = text.value ? 'Hello, ' + text.value : 'Hello, world!';
     const p = document.createElement('p');
     p.innerText = message;
     report.appendChild(p);
