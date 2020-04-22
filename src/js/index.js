@@ -14,7 +14,7 @@ function onClickConvertButton() {
     if(xhr.readyState === 4) {
       const obj = JSON.parse(xhr.response);
       console.dir(obj);
-      const results = obj.Array(1);
+      const results = obj[0][0]
       console.dir(results);
     }
   }
