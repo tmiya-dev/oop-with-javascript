@@ -17,7 +17,7 @@ li {
   max-width: 80%;
   margin: 20px auto;
 }
-  
+
 .input-text {
   width: 100%;
   padding: 5px 10px;
@@ -30,9 +30,9 @@ li {
   display: flex;
   justify-content: center;
 
-  .converted-list-item { 
+  .converted-list-item {
     margin: 0 10px;
-  
+
     label {
       display: inline-block;
       border: 1px solid #4689FF;
@@ -59,4 +59,13 @@ li {
     margin: 10px;
     cursor: pointer;
   }
+}
+
+.finished {
+  color: black;
+}
+
+.unfinished {
+  background-color: skyblue;
+  color: gray;
 }

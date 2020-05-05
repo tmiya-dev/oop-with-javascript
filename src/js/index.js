@@ -2,9 +2,20 @@ import '../scss/style.scss';
 
 'use strict';
 
-function drawInputText(unfinished) {
+let finished = '';
+let unfinished = '';
+
+function drawInputText() {
   const field = document.getElementById('inputText');
-  field.innerText = unfinished;
+  field.innerText = '';
+  const finishedSpan = document.createElement('span');
+  finishedSpan.className = 'finished';
+  finishedSpan.innerText = finished;
+  const unfinishedSpan = document.createElement('span');
+  unfinishedSpan.className = 'unfinished';
+  unfinishedSpan.innerText = unfinished;
+  field.appendChild(finishedSpan);
+  field.appendChild(unfinishedSpan);
 }
 
 function drawConvertedResults(results) {
@@ -23,17 +34,17 @@ function drawConvertedResults(results) {
     label.appendChild(span);
     li.appendChild(label);
     convertedResults.appendChild(li);
-    label.addEventListener('click', () => {
-      console.dir(result)
+    radio.addEventListener('click', () => {
+      unfinished = '';
+      finished += result;
+      drawInputText()
     });
   }
 }
 
-let unfinished = '';
-
 function onClickButton(button) {
   unfinished += button.innerText
-  drawInputText(unfinished);
+  drawInputText();
   const encodedText = encodeURI(unfinished);
   console.dir(encodedText);
   const xhr = new XMLHttpRequest();
