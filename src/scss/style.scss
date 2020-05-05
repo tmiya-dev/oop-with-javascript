@@ -1,0 +1,62 @@
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  font-size: 1.3rem;
+}
+
+ul,
+li {
+  list-style-type: none;
+}
+
+.main-content {
+  max-width: 80%;
+  margin: 20px auto;
+}
+  
+.input-text {
+  width: 100%;
+  padding: 5px 10px;
+  min-height: 30px;
+  font-size: 2rem;
+  border: 1px solid #ddd;
+}
+
+.converted-list {
+  display: flex;
+  justify-content: center;
+
+  .converted-list-item { 
+    margin: 0 10px;
+  
+    label {
+      display: inline-block;
+      border: 1px solid #4689FF;
+      padding: 5px 10px;
+      cursor: pointer;
+
+      input[type="radio"] {
+        display: none;
+      }
+    }
+  }
+}
+
+.keyboard {
+  border-radius: 12px;
+  display: flex;
+  flex-direction: row-reverse;
+  background: #4689FF;
+  padding: 0 15px;
+
+  .keyboard-button {
+    background-color: #fff;
+    padding: 5px 10px;
+    margin: 10px;
+    cursor: pointer;
+  }
+}
