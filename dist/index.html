@@ -6,14 +6,93 @@
     <title>OOP with JavaScript</title>
 </head>
 <body>
-  <div>
-    <label>かな入力</label>
-    <input type="text" id="inputText">
-    <br>
-    <button type="button" id="convertButton">変換</button>
-    <br>
-    <label>結果</label>
-    <input type="text" id="convertedResult">  
+  <div class="main-content">
+    <div id="inputText" class="input-text"></div>    
+    <ul id="convertedResults" class="converted-list">
+      <li class="converted-list-item">
+        <label><input type="radio" name="radio-button"><span>登って</span></label>
+      </li>
+      <li class="converted-list-item">
+        <label><input type="radio" name="radio-button"><span>上って</span></label>
+      </li>
+      <li class="converted-list-item">
+        <label><input type="radio" name="radio-button"><span>のぼって</span></label>
+      </li>
+      <li class="converted-list-item">
+        <label><input type="radio" name="radio-button"><span>昇って</span></label>
+      </li>
+      <li class="converted-list-item">
+        <label><input type="radio" name="radio-button"><span>ノボって</span></label>
+      </li>
+    </ul>
+    <section class="keyboard">
+      <dl>
+        <dd class="keyboard-button" id="keyboard">あ</dd>
+        <dd class="keyboard-button" id="keyboard">い</dd>
+        <dd class="keyboard-button" id="keyboard">う</dd>
+        <dd class="keyboard-button" id="keyboard">え</dd>
+        <dd class="keyboard-button" id="keyboard">お</dd>
+      </dl>
+      <dl>
+        <dd class="keyboard-button" id="keyboard">か</dd>
+        <dd class="keyboard-button" id="keyboard">き</dd>
+        <dd class="keyboard-button" id="keyboard">く</dd>
+        <dd class="keyboard-button" id="keyboard">け</dd>
+        <dd class="keyboard-button" id="keyboard">こ</dd>
+      </dl>
+      <dl>
+        <dd class="keyboard-button" id="keyboard">さ</dd>
+        <dd class="keyboard-button" id="keyboard">し</dd>
+        <dd class="keyboard-button" id="keyboard">す</dd>
+        <dd class="keyboard-button" id="keyboard">せ</dd>
+        <dd class="keyboard-button" id="keyboard">そ</dd>
+      </dl>
+      <dl>
+        <dd class="keyboard-button" id="keyboard">た</dd>
+        <dd class="keyboard-button" id="keyboard">ち</dd>
+        <dd class="keyboard-button" id="keyboard">つ</dd>
+        <dd class="keyboard-button" id="keyboard">て</dd>
+        <dd class="keyboard-button" id="keyboard">と</dd>
+      </dl>
+      <dl>
+        <dd class="keyboard-button" id="keyboard">な</dd>
+        <dd class="keyboard-button" id="keyboard">に</dd>
+        <dd class="keyboard-button" id="keyboard">ぬ</dd>
+        <dd class="keyboard-button" id="keyboard">ね</dd>
+        <dd class="keyboard-button" id="keyboard">の</dd>
+      </dl>
+      <dl>
+        <dd class="keyboard-button" id="keyboard">は</dd>
+        <dd class="keyboard-button" id="keyboard">ひ</dd>
+        <dd class="keyboard-button" id="keyboard">ふ</dd>
+        <dd class="keyboard-button" id="keyboard">へ</dd>
+        <dd class="keyboard-button" id="keyboard">ほ</dd>   
+      </dl>
+      <dl>
+        <dd class="keyboard-button" id="keyboard">ま</dd>
+        <dd class="keyboard-button" id="keyboard">み</dd>
+        <dd class="keyboard-button" id="keyboard">む</dd>
+        <dd class="keyboard-button" id="keyboard">め</dd>
+        <dd class="keyboard-button" id="keyboard">も</dd>
+      </dl>
+      <dl>
+        <dd class="keyboard-button" id="keyboard">や</dd>
+        <dd class="keyboard-button" id="keyboard">ゆ</dd>
+        <dd class="keyboard-button" id="keyboard">よ</dd>
+      </dl>
+      <dl>
+        <dd class="keyboard-button" id="keyboard">ら</dd>
+        <dd class="keyboard-button" id="keyboard">り</dd>
+        <dd class="keyboard-button" id="keyboard">る</dd>
+        <dd class="keyboard-button" id="keyboard">れ</dd>
+        <dd class="keyboard-button" id="keyboard">ろ</dd>
+      </dl>
+      <dl>
+        <dd class="keyboard-button" id="keyboard">わ</dd>
+        <dd class="keyboard-button" id="keyboard">を</dd>
+        <dd class="keyboard-button" id="keyboard">ん</dd>
+      </dl>
+    </section>
   </div>
 </body>
 </html>
