@@ -7,6 +7,25 @@ function drawInputText(unfinished) {
   field.innerText = unfinished;
 }
 
+function drawConvertedResults(results) {
+  const convertedResults = document.getElementById('convertedResults');
+  convertedResults.innerHTML = '';
+  for (const result of results) {
+    const li = document.createElement('li');
+    li.className = 'converted-list-item';
+    const label = document.createElement('label');
+    const radio = document.createElement('input');
+    radio.type = 'radio';
+    radio.name = 'radio-button';
+    const span = document.createElement('span');
+    span.innerText = result;
+    label.appendChild(radio);
+    label.appendChild(span);
+    li.appendChild(label);
+    convertedResults.appendChild(li)
+  }
+}
+
 let unfinished = '';
 
 function onClickButton(button) {
@@ -20,7 +39,7 @@ function onClickButton(button) {
   xhr.onreadystatechange = function() {
     if(xhr.readyState === 4) {
       const respond = JSON.parse(xhr.response);
-      console.dir(respond);
+      drawConvertedResults(respond[0][1])
     }
   }
 }
