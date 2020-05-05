@@ -22,7 +22,10 @@ function drawConvertedResults(results) {
     label.appendChild(radio);
     label.appendChild(span);
     li.appendChild(label);
-    convertedResults.appendChild(li)
+    convertedResults.appendChild(li);
+    label.addEventListener('click', () => {
+      console.dir(result)
+    });
   }
 }
 
