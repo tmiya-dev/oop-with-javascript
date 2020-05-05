@@ -18,12 +18,12 @@ window.addEventListener('load', () => {
       const encodedText = encodeURI(unfinished);
       console.dir(encodedText);
       const xhr = new XMLHttpRequest();
-      xhr.open('GET', 'http://www.google.com/transliterate?langpair=ja-Hira|ja&text=' + unfinished, true);
+      xhr.open('GET', 'http://www.google.com/transliterate?langpair=ja-Hira|ja&text=' + encodedText, true);
       xhr.send();
       xhr.onreadystatechange = function() {
         if(xhr.readyState === 4) {
-          const respond = JSON.parse()
-          console.log('connected');
+          const respond = JSON.parse(xhr.response);
+          console.dir(respond);
         }
       } 
     })
