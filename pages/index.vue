@@ -1,10 +1,14 @@
 <template>
   <div class="main-content">
-    <div id="input-field" class="input-text"></div>
+    <div id="input-field" class="input-text">
+      <span class="finished">{{ finished }}</span>
+      <span class="unfinished">{{ unfinished }}</span>
+    </div>
     <div id="conversion-results"></div>
     <div id="keyboard">
       <Keyboard
         :keys="keys"
+        @click="appendToUndefined"
       >
       </Keyboard>
     </div>
@@ -31,7 +35,14 @@ export default {
         'らりるれろ'.split(''),
         'わをん゛゜'.split(''),
         '削小'.split(''),
-      ]
+      ],
+      finished: '',
+      unfinished: ''
+    }
+  },
+  methods: {
+    appendToUndefined (char) {
+      this.unfinished += char;
     }
   }
   

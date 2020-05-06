@@ -22,7 +22,7 @@ export default {
     },
     methods: {
         onKey (value) {
-            console.log(value);
+            this.$emit('click', value);
         }
     }
 }
