@@ -38,15 +38,17 @@ function drawConvertedResults(results) {
       unfinished = '';
       finished += result;
       drawInputText()
+      convertedResults.textContent = null;
     });
   }
 }
 
 function onClickButton(button) {
+  const listItem = document.getElementsByClassName('converted-list-item');
+  listItem.hidden = false;
   unfinished += button.innerText
   drawInputText();
   const encodedText = encodeURI(unfinished);
-  console.dir(encodedText);
   const xhr = new XMLHttpRequest();
   xhr.open('GET', 'http://www.google.com/transliterate?langpair=ja-Hira|ja&text=' + encodedText, true);
   xhr.send();
@@ -58,8 +60,30 @@ function onClickButton(button) {
   }
 }
 
-
 window.addEventListener('load', () => {
+  const keyLayout = [
+    'あいうえお'.split(''),
+    'かきくけこ'.split(''),
+    'さしすせそ'.split(''),
+    'たちつてと'.split(''),
+    'なにぬねの'.split(''),
+    'はひふへほ'.split(''),
+    'まみむめも'.split(''),
+    'やゆよ小削'.split(''),
+    'らりるれろ'.split(''),
+    'わをん゛゜'.split('')
+  ];
+  const keyboard = document.getElementById('keyboard');
+  for (const keyOfRows of keyLayout) {
+    const dl = document.createElement('dl');
+    for (const key of keyOfRows) {
+      const dd = document.createElement('dd');
+      dd.className = 'keyboard-button';
+      dd.innerText = key;
+      dl.appendChild(dd);
+    }
+    keyboard.appendChild(dl);
+  }
   const buttons = document.getElementsByClassName('keyboard-button');
   for(let i = 0; i < buttons.length; ++i) {
     buttons[i].addEventListener('click', () => {
