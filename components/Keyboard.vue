@@ -1,7 +1,10 @@
 <template>
     <div class="keyboard">
         <dl v-for="row of keys">
-            <dd v-for="key of row" class="keyboard-button">
+            <dd
+                    v-for="key of row" class="keyboard-button"
+                    @click="onKey(key)"
+            >
                 {{key}}
             </dd>
         </dl>
@@ -15,6 +18,11 @@ export default {
         keys: {
             type: Array,
             required: true
+        }
+    },
+    methods: {
+        onKey (value) {
+            console.log(value);
         }
     }
 }
