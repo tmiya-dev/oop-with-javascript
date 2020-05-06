@@ -22,6 +22,15 @@ export default {
       keys: [
         'あいうえお'.split(''),
         'かきくけこ'.split(''),
+        'さしすせそ'.split(''),
+        'たちつてと'.split(''),
+        'なにぬねの'.split(''),
+        'はひふへほ'.split(''),
+        'まみむめも'.split(''),
+        'やゆよ'.split(''),
+        'らりるれろ'.split(''),
+        'わをん゛゜'.split(''),
+        '削小'.split(''),
       ]
     }
   }
@@ -32,9 +41,14 @@ export default {
 <style lang="scss">
 
 .main-content {
-  width: 80%;
+  max-width: 95%;
+  margin: 40px auto;
+
 }
+
 .input-text {
   border: 1px solid #ddd;
+  padding: 20px 10px;
 }
+
 </style>
