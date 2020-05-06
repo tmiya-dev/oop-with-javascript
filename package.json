@@ -10,7 +10,7 @@
     "@babel/preset-env": "^7.8.4",
     "babel-loader": "^8.0.6",
     "browser-sync": "^2.26.7",
-    "core-js": "^3.6.4",
+    "core-js": "^2.6.11",
     "webpack": "^4.41.6",
     "webpack-cli": "^3.3.11"
   },
@@ -20,8 +20,11 @@
   },
   "author": "Takeshi Miyakawa <tmiya@tmiya.dev>",
   "license": "GPL-3.0-or-later",
-  "dependencies": {},
+  "dependencies": {
+    "nuxt": "^2.12.2"
+  },
   "scripts": {
+    "dev": "nuxt",
     "build": "webpack",
     "server": "browser-sync",
     "watch:build": "webpack -w",
