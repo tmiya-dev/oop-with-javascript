@@ -12,7 +12,7 @@ export default {
 }
 </script>
 
-<style lang="sass">
+<style lang="scss">
 
 .main-content {
   width: 80%;

@@ -12,7 +12,9 @@
     "browser-sync": "^2.26.7",
     "core-js": "^2.6.11",
     "webpack": "^4.41.6",
-    "webpack-cli": "^3.3.11"
+    "webpack-cli": "^3.3.11",
+    "sass-loader": "8.0.2",
+    "node-sass": "4.14.1"
   },
   "repository": {
     "type": "git",
