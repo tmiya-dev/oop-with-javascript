@@ -45,25 +45,32 @@ export default {
       unfinished: ''
     }
   },
+  watch: {
+    unfinished: function(newVal, oldVal) {
+      if (newVal.length === 0) {
+        this.results = [];
+      } else {
+        const encoded = encodeURI(newVal);
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', 'http://www.google.com/transliterate?langpair=ja-Hira|ja&text=' + encoded, true);
+        xhr.send();
+        const component = this
+        xhr.onreadystatechange = function() {
+          if(xhr.readyState === 4 && xhr.status === 200) {
+            const respond = JSON.parse(xhr.responseText);
+            component.results = respond[0][1]
+          }
+        }
+      }
+    }
+  },
   methods: {
     appendToUndefined (char) {
       this.unfinished += char;
-      const encoded = encodeURI(this.unfinished);
-      const xhr = new XMLHttpRequest();
-      xhr.open('GET', 'http://www.google.com/transliterate?langpair=ja-Hira|ja&text=' + encoded, true);
-      xhr.send();
-      const component = this
-      xhr.onreadystatechange = function() {
-        if(xhr.readyState === 4 && xhr.status === 200) {
-          const respond = JSON.parse(xhr.responseText);
-          component.results = respond[0][1]
-        }
-      }
     },
     appendToFinished(result) {
       this.finished += result;
       this.unfinished = '';
-      this.results = [];
     }
   }
 
