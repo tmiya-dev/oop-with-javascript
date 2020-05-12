@@ -25,6 +25,9 @@ export default {
   },
   data () {
     return {
+      results: [
+        
+      ],
       keys: [
         'あいうえお'.split(''),
         'かきくけこ'.split(''),
