@@ -4,7 +4,9 @@
       <span class="finished">{{ finished }}</span>
       <span class="unfinished">{{ unfinished }}</span>
     </div>
-    <div id="conversion-results"></div>
+    <ul id="conversion-results">
+      <li v-for="result in results">{{ result }}</li>
+    </ul>
     <div id="keyboard">
       <Keyboard
         :keys="keys"
@@ -43,6 +45,16 @@ export default {
   methods: {
     appendToUndefined (char) {
       this.unfinished += char;
+      const encoded = encodeURI(this.unfinished);
+      const xhr = new XMLHttpRequest();
+      xhr.open('GET', 'http://www.google.com/transliterate?langpair=ja-Hira|ja&text=' + encoded, true);
+      xhr.send();
+      xhr.onreadystatechange = function() {
+        if(xhr.readyState === 4 && xhr.status === 200) {
+          const responed = JSON.parse(xhr.responseText);
+          console.dir(responed);
+        }
+      }
     }
   }
   
@@ -59,7 +71,9 @@ export default {
 
 .input-text {
   border: 1px solid #ddd;
-  padding: 20px 10px;
+  padding: 10px;
+  min-height: 30px;
+  font-size: 20px;
 }
 
 </style>
