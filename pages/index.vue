@@ -63,7 +63,7 @@ export default {
     appendToFinished(result) {
       this.finished += result;
       this.unfinished = '';
-      this.results = '';
+      this.results = [];
     }
   }
 
