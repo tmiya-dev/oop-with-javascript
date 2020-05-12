@@ -5,7 +5,7 @@
       <span class="unfinished">{{ unfinished }}</span>
     </div>
     <ul id="conversion-results">
-      <li v-for="result in results">{{ result }}</li>
+      <li v-for="result in results" @click="appendToFinished">{{ result }}</li>
     </ul>
     <div id="keyboard">
       <Keyboard
@@ -59,6 +59,9 @@ export default {
           component.results = respond[0][1]
         }
       }
+    },
+    appendToFinished() {
+      console.dir(this.result);
     }
   }
 
@@ -79,5 +82,6 @@ export default {
   min-height: 30px;
   font-size: 20px;
 }
+
 
 </style>
