@@ -61,7 +61,9 @@ export default {
       }
     },
     appendToFinished(result) {
-      console.dir(result);
+      this.finished += result;
+      this.unfinished = '';
+      this.results = '';
     }
   }
 
