@@ -5,7 +5,7 @@
       <span class="unfinished">{{ unfinished }}</span>
     </div>
     <ul id="conversion-results">
-      <li v-for="result in results" @click="appendToFinished">{{ result }}</li>
+      <li v-for="result in results" @click="appendToFinished(result)">{{ result }}</li>
     </ul>
     <div id="keyboard">
       <Keyboard
@@ -60,8 +60,8 @@ export default {
         }
       }
     },
-    appendToFinished() {
-      console.dir(this.result);
+    appendToFinished(result) {
+      console.dir(result);
     }
   }
 
