@@ -26,7 +26,7 @@ export default {
   data () {
     return {
       results: [
-        
+
       ],
       keys: [
         'あいうえお'.split(''),
@@ -52,15 +52,16 @@ export default {
       const xhr = new XMLHttpRequest();
       xhr.open('GET', 'http://www.google.com/transliterate?langpair=ja-Hira|ja&text=' + encoded, true);
       xhr.send();
+      const component = this
       xhr.onreadystatechange = function() {
         if(xhr.readyState === 4 && xhr.status === 200) {
-          const responed = JSON.parse(xhr.responseText);
-          console.dir(responed);
+          const respond = JSON.parse(xhr.responseText);
+          component.results = respond[0][1]
         }
       }
     }
   }
-  
+
 }
 </script>
 
