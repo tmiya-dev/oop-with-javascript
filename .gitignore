@@ -1,4 +1,4 @@
 node_modules/
 .idea/
 dist/main.js*
-
+package-lock.json
